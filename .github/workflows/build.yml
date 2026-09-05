@@ -26,7 +26,7 @@ jobs:
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
-          channel: "stable"
+          flutter-version: "3.44.8"
 
       - name: Install Flet
         run: |
@@ -34,7 +34,7 @@ jobs:
 
       - name: Build APK
         run: |
-          flet build apk --product "Счётчик слов"
+          printf 'y\ny\ny\n' | flet build apk --product "WordCounter"
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
